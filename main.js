@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     createList();
 
     document.getElementById("buttonAdd").addEventListener("click", function () {
-        EnergyInArray.push ( new EnergyInObject(document.getElementById("dateInput").value, selectedCategory,
-        document.getElementById("nameInput").value ) );
+        EnergyInArray.push ( new EnergyInObject(document.getElementById("dateInput").value, selectedCategory, document.getElementById("nameInput").value ) );
         
         document.getElementById("dateInput").value = "";
         document.getElementById("nameInput").value = "";
@@ -53,7 +52,7 @@ function createList() {
     EnergyInArray.forEach(function (element,) {   // use handy array forEach method
         var li = document.createElement('li');
           // added data-role="listview" to the ul in the html
-        li.innerHTML = element.name + ":  " + element.category + "   " + element.date;
+        li.innerHTML = element.date + ":  " + element.category + "   " + element.name;
         myul.appendChild(li);
     });
 };
